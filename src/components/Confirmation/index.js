@@ -3,8 +3,8 @@ import React from 'react';
 const index = () => {
 	return (
 		<>
-			<div class="page-wall hidden"></div>
-			<div class="confirmation hidden">
+			<div className="page-wall hidden"></div>
+			<div className="confirmation hidden">
 				<p>Confirme seu pedido</p>
 				<div>
 					<p>food name</p>

@@ -27,6 +27,7 @@
 
 .bottombar .blocked {
     background: #cbcbcb;
+    cursor: initial;
 }
 
 .bottombar button p:first-child, .bottombar .blocked p:last-child {
