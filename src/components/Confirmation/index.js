@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const index = () => {
 	return (
 		<>
-			<div className="page-wall hidden"></div>
-			<div className="confirmation hidden">
+			<div className="page-wall"></div>
+			<div className="confirmation">
 				<p>Confirme seu pedido</p>
 				<div>
 					<p>food name</p>
@@ -23,7 +24,7 @@ const index = () => {
 					<p>total value</p>
 				</div>
 				<button>Tudo certo, pode pedir!</button>
-				<button>Cancelar</button>
+				<button><Link to="/">Cancelar</Link></button>
 			</div>
 		</>
 	);

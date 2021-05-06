@@ -30,7 +30,19 @@
     cursor: initial;
 }
 
-.bottombar button p:first-child, .bottombar .blocked p:last-child {
+.bottombar button p {
+    height: 60px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 50px;
+    line-height: 60px;
+}
+
+.bottombar button > p {
+    line-height: 30px;
+}
+
+.bottombar button > p:first-child, .bottombar .blocked a:last-child {
     display: none;
 }
 
@@ -40,7 +52,7 @@
     width: 200px;
 }
 
-.bottombar button p:last-child {
+.bottombar button a:last-child {
     font-size: 20px;
     font-weight: 700;
 }

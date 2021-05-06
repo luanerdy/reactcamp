@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Confirmation from './components/Confirmation';
 import Bottom from './components/Bottom';
@@ -26,12 +27,13 @@ const App = () => {
 			quantity: 0,
 		})),
 	});
+	const [selected, setSelected] = useState({});
 
 	const select = (id, category) => {
 		const index = quantities[category].findIndex((el) => el.id === id);
 		const newQuantities = unselectPrevious(category);
 		newQuantities[category][index].selected = true;
-		addQuantity(id, category, newQuantities);
+		addQuantity(id, category, newQuantities, index);
 	};
 
 	const unselectPrevious = (category) => {
@@ -45,12 +47,22 @@ const App = () => {
 		return newQuantities;
 	};
 
-	const addQuantity = (id, category, newQuantities = quantities) => {
+	const addQuantity = (
+		id,
+		category,
+		newQuantities = quantities,
+		index = null
+	) => {
 		const newCategory = newQuantities[category].map((element) => {
 			element.id === id && element.quantity++;
 			return element;
 		});
 		newQuantities[category] = newCategory;
+		if (index !== null) {
+			const newSelected = selected;
+			newSelected[category] = newQuantities[category][index];
+			setSelected(newSelected);
+		}
 		setQuantities({ ...newQuantities });
 	};
 
@@ -58,7 +70,12 @@ const App = () => {
 		const newCategory = newQuantities[category].map((element) => {
 			if (element.id === id) {
 				element.quantity--;
-				element.quantity === 0 && (element.selected = false);
+				if(element.quantity === 0) {
+					(element.selected = false)
+					const newSelected = selected;
+					delete newSelected[category];
+					setSelected(newSelected);
+				};
 			}
 			return element;
 		});
@@ -66,17 +83,27 @@ const App = () => {
 		setQuantities({ ...newQuantities });
 	};
 
+	const verifySelected = () => {
+		return Object.keys(selected).length === 3 ? true : false;
+	}
+
 	return (
-		<>
-			<Header />
-			<Confirmation />
-			<Menu
-				options={options}
-				quantities={quantities}
-				functions={[select, addQuantity, minusQuantity]}
-			/>
-			<Bottom />
-		</>
+		<Router>
+			<Switch>
+				<Route path="/" exact>
+					<Header />
+					<Menu
+						options={options}
+						quantities={quantities}
+						functions={[select, addQuantity, minusQuantity]}
+					/>
+					<Bottom selected={verifySelected()} />
+				</Route>
+				<Route path="/confirmation" exact>
+					<Confirmation />
+				</Route>
+			</Switch>
+		</Router>
 	);
 };
 
