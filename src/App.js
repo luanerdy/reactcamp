@@ -27,6 +27,7 @@ const App = () => {
 			quantity: 0,
 		})),
 	});
+
 	const [selected, setSelected] = useState({});
 
 	const select = (id, category) => {
@@ -100,7 +101,7 @@ const App = () => {
 					<Bottom selected={verifySelected()} />
 				</Route>
 				<Route path="/confirmation" exact>
-					<Confirmation />
+					<Confirmation selected={selected} options={options} />
 				</Route>
 			</Switch>
 		</Router>
