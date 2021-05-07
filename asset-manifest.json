@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/reactcamp/static/js/main.a0999002.chunk.js",
+    "main.js.map": "/reactcamp/static/js/main.a0999002.chunk.js.map",
+    "runtime-main.js": "/reactcamp/static/js/runtime-main.5703fb4e.js",
+    "runtime-main.js.map": "/reactcamp/static/js/runtime-main.5703fb4e.js.map",
+    "static/js/2.a3489067.chunk.js": "/reactcamp/static/js/2.a3489067.chunk.js",
+    "static/js/2.a3489067.chunk.js.map": "/reactcamp/static/js/2.a3489067.chunk.js.map",
+    "index.html": "/reactcamp/index.html",
+    "static/js/2.a3489067.chunk.js.LICENSE.txt": "/reactcamp/static/js/2.a3489067.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5703fb4e.js",
+    "static/js/2.a3489067.chunk.js",
+    "static/js/main.a0999002.chunk.js"
+  ]
+}

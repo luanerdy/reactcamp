@@ -1,0 +1,58 @@
+.bottombar {
+    height: 92px;
+    width: 100%;
+    max-width: 650px;
+
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+    color: white;
+    z-index: 50;
+}
+
+.bottombar button {
+    background: #32b72f;
+    height: 60px;
+    width: 88%;
+    max-width: 400px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottombar .blocked {
+    background: #cbcbcb;
+    cursor: initial;
+}
+
+.bottombar button p {
+    height: 60px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 50px;
+    line-height: 60px;
+}
+
+.bottombar button > p {
+    line-height: 30px;
+}
+
+.bottombar button > p:first-child, .bottombar .blocked a:last-child {
+    display: none;
+}
+
+.bottombar .blocked p:first-child {
+    display: block;
+    font-size: 20px;
+    width: 200px;
+}
+
+.bottombar button a:last-child {
+    font-size: 20px;
+    font-weight: 700;
+}
